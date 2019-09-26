@@ -3,10 +3,26 @@
 monster game:
 
 Hannah Quevedo: animation, backgrounds, monsters, players images. 
-Hannah McCarbvill: repository
+Hannah McCarvill: repository
 Jessica Blades: plan/ outline of game workings
 
 Monster game
+
+Idea/Rules: There are 5 players that start running at the beginning of the game 
+	         After 10? Seconds of running the monster is released and starts chasing the players across the screen
+	         The players must navigate randomly generated obstacles that change each time
+	         To win the game the players must reach the end of the map to win or be caught by the monster
+	         Have the option of difficulty: Easy, Medium and Hard 
+	         Harder the difficulty the faster the monster and the more obstacles there are
+	
+What Graphics are needed: 
+	• Player Characters
+	• Monster
+	• Obstacle Images
+	• Background
+	
+
+
 
 Obstacles:
 Crumbling blocks that give way to obstacle like spikes or fire.
