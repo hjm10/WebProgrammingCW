@@ -15,9 +15,9 @@
 - The harder the difficulty, the faster the monster and the more obstacles there are
 	
 **Graphics Needed:**
-- Player Characters
-- Monster
-- Obstacle Images
+- [Players](https://craftpix.net/freebies/free-citizen-artist-astrologer-4-direction-npc-character-pack/)
+- [Monsters](https://craftpix.net/freebies/free-golems-chibi-2d-game-sprites/)
+- Obstacles
 - Background
 	
 
