@@ -1,15 +1,28 @@
-.background{
-    width: 100%;
+.bg{
     height: 100%;
+    width: 100%;
     position: absolute;
+  
+    background-repeat:repeat-x;
+    background-size: cover;
     top: 0;
     left: 0;
-    z-index: 50;
+     z-index: 50;
 }
 
+body .bg{
 
-#image {
-    height: 256px;
-    width: 256px;
-    /*background: url ("zombie.png") 0px 0px;*/
+    background-repeat:repeat-x;
+    background-size: cover;
+}
+
+#monster{
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    margin-top: 200px;
+    width: 600px;
+    height: 600px;
+    z-index:  100; ;
+    
 }
