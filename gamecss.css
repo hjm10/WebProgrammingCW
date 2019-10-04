@@ -1,25 +1,24 @@
-.bg{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  
-    background-repeat:repeat-x;
-    background-size: cover;
-    top: 0;
-    left: 0;
-     z-index: 50;
+
+
+body{
+  margin: 50;
+  padding: 50;
+  position: absolute;
+  background: url(back.jpg);
+  height: 100%;
+  width: 100%;
+    background-size: 65%;
+   background-position: 0 0;
+   background-repeat: repeat-x;
 }
 
-body .bg{
 
-    background-repeat:repeat-x;
-    background-size: cover;
-}
+
 
 #monster{
     position: absolute;
-    top: 35%;
-    left: 25%;
+    top: 0%;
+    left: 0%;
     margin-top: 200px;
     width: 600px;
     height: 600px;

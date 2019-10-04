@@ -1,4 +1,4 @@
-
+/*adding comments next*/
 var objImage= null;
 	function init(){
 		objImage=document.getElementById("monster");				
