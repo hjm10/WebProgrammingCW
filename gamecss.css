@@ -25,3 +25,14 @@ body{
     z-index:  100; ;
     
 }
+
+#knightplayer{
+  position: absolute;
+  top: 0%;
+  left:0%;
+  margin-top: 200px;
+  width: 400px;
+  height: 400px;
+  z-index: 100; 
+  
+}
