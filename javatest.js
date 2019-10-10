@@ -66,8 +66,24 @@ loop = function(){ //merging controller logic with physics.
 	if (rectangle.y > 180 - 16 - 32){
 		rectangle.jumping = false;//so we can jump again
 		rectangle.y = 180 - 16 - 32;
-		rectangle.y_velocity = 0;
+		rectangle.y_velocity = 0;//smooth velocity
 	}
+	
+	//if rectangle is going off the left of the screen
+	if(rectangle.x < -32){
+		rectangle.x = 320;
+		
+	}
+	else if (rectangle.x > 320){ //if rectangle goes past right of the screen, teleported over to the left side of the screen
+		rectangle.x = -32;
+	}
+	
+//call update when the browser is ready to draw again
+	window.requestAnimationFrame(loop);
+};
+	
+	
+	
 	
 	
 
