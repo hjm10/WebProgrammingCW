@@ -31,6 +31,30 @@ var objImage= null;
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
 	
+<script> 
+	var player=document.getElementById("knight");
+var body=document.getElementById("body");
+
+var playerleft = 0;
+
+function amnim(e){
+	
+	if(e.keyCode ==39){
+		playerleft +=2;
+		player.style.left = playerleft + 'px';
+		if(playerleft >=600){
+			playerleft -=2;
+	}
+	if(e.keyCode==37){
+		playerleft -=2;
+		player.style.left = playerleft + 'px';
+		if(playerleft <=0){
+			playerleft +=2;
+	}
+}
+
+document.onkeydown = anim;
+
     window.onload=init;
     
     
