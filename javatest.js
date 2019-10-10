@@ -1,12 +1,13 @@
 /*adding comments next*/
 var objImage= null;
 	function init(){
-		objImage=document.getElementById("monster");				
+		objImage=document.getElementById("Knight");				
 		objImage.style.position='relative';
 		objImage.style.left='0px';
 		objImage.style.top='0px';
 	}
-	function getKeyAndMove(e){				
+	function getKeyAndMove(e){
+						
 		var key_code=e.which||e.keyCode;
 		switch(key_code){
             case 32: //spacebar
@@ -31,8 +32,11 @@ var objImage= null;
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
 	
-<script> 
-	var player=document.getElementById("knight");
+ window.onload=init;
+	
+	
+	
+/*var player=document.getElementById("knight");
 var body=document.getElementById("body");
 
 var playerleft = 0;
@@ -56,6 +60,8 @@ function amnim(e){
 document.onkeydown = anim;
 
     window.onload=init;
+  
+  */  
     
     
-
+    
