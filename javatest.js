@@ -98,7 +98,7 @@ loop = function(){ //merging controller logic with physics.
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
 	
-<script> 
+
 	var player=document.getElementById("knightplayer");
 var body=document.getElementById("body");
  
