@@ -15,7 +15,7 @@ controller ={
 	up: false,
 	KeyListener: function(event){
 		
-		var key_state = (event.type == "keydown")?true:false;
+		var key_code=e.which||e.keyCode;
 		switch(event.keyCode){
             //case 32: //spacebar
             //jump();
@@ -79,7 +79,7 @@ loop = function(){ //merging controller logic with physics.
 	}
 	
 //call update when the browser is ready to draw again
-	window.requestAnimationFrame(loop);
+	//window.requestAnimationFrame(loop);
 };
 	
 	
