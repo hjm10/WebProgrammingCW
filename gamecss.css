@@ -25,3 +25,35 @@ body{
     z-index:  100; ;
     
 }
+
+#knightplayer{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  margin-top: 200px;
+  width: 400px;
+  height: 700px;
+  z-index: 50;
+}
+
+ /* #mage{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    margin-top: 200px;
+    width: 400px;
+    height: 700px;
+    z-index: 50;
+}
+
+#rouge{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  margin-top: 200px;
+  width: 400px;
+  height: 700px;
+  z-index: 50;
+}
+*/
+        
