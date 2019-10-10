@@ -117,7 +117,7 @@ knightplayer = {
 
 
 
-}
+
 
 document.onkeydown = anim;
 
