@@ -17,8 +17,8 @@ controller ={
 		
 		var key_state = (event.type == "keydown")?true:false;
 		switch(event.keyCode){
-            case 32: //spacebar
-            jump();
+            //case 32: //spacebar
+            //jump();
             break;
 			case 39: //right arrow key
 				controller.right = key_state;
