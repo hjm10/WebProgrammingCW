@@ -8,7 +8,7 @@ var objImage= null;
 	}
 
 
-	/*function getKeyAndMove(e){ */
+	function getKeyAndMove(e){ 
 controller ={
 	left: false, 
 	right:false,
