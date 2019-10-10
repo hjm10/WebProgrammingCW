@@ -26,15 +26,30 @@ body{
     
 }
 
-#knightplayer{
+#Knight{
   position: absolute;
   top: 10%;
   left: 10%;
   margin-top: 200px;
-  width: 400px;
-  height: 700px;
+ 
+  
   z-index: 50;
-}
+
+
+    width: 218.5px;
+    height: 296px;
+    background-image : url(Knight\ Running.png);
+    animation: moveX 1s steps(10) infinite;
+  }
+  @keyframes moveX{
+    from{background-position-x:0px;}
+    to{background-position-x:220px;}
+  }
+
+
+
+
+
 
  /* #mage{
     position: absolute;
