@@ -16,7 +16,7 @@ controller ={
 	KeyListener: function(event){
 		
 		var key_state = (event.type == "keydown")?true:false;
-		switch(key_code){
+		switch(event.keyCode){
             case 32: //spacebar
             jump();
             break;
