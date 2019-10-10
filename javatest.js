@@ -1,27 +1,77 @@
 /*adding comments next*/
 var objImage= null;
 	function init(){
-		objImage=document.getElementById("Knight");				
+		objImage=document.getElementById("monster");				
 		objImage.style.position='relative';
 		objImage.style.left='0px';
 		objImage.style.top='0px';
 	}
-	function getKeyAndMove(e){
-						
-		var key_code=e.which||e.keyCode;
+
+
+	/*function getKeyAndMove(e){ */
+controller ={
+	left: false, 
+	right:false,
+	up: false,
+	KeyListener: function(event){
+		
+		var key_state = (event.type == "keydown")?true:false;
 		switch(key_code){
             case 32: //spacebar
             jump();
             break;
-			case 37: //left arrow key
-				moveLeft();
-				break;
 			case 39: //right arrow key
-				moveRight();
+				controller.right = key_state;
 				break;
+				
+			case 38: //up arrow key
+				controller.up = key_state; //false for key up, true for keydown,
+				                      //prevents character from moving when key isnt pressed. 
+				break;
+			
+			case 37: // left arrow key
+				controller.left = key_state;
+				break;
+				
+		
 								
-		}
+	}
     }
+};
+
+loop = function(){ //merging controller logic with physics. 
+	
+	if(controller.up && rectangle.jumping == false){ //jumping physics
+		//up key presses, rectangle not jumping, want it to jump
+		rectangle.y_velocity -=20;//send rectangle shooting upwards 
+		rectangle.jumping = true;
+		
+	}
+	
+	if (controller.left){//movement code for left and right keypressed events 
+		rectangle.x_velocity -=0.5;//left key, subtract .5 to x velocity
+	}
+	
+	if(controller.right){
+		rectangle.x_velocity +=0.5;//right key, add .5 to x velocity. 
+	}
+	
+	rectangle.y_velocity +=1.5; //simulating gravity, adds 1.5 on every frame of y velocity animation, makes rectangle fall
+	rectangle.x += rectangle.x_velocity;//adds x velocity to current position
+	rectangle.y += rectangle.y_velocity;//adds y velocity to current position
+	rectangle.x_velocity *= 0.9; //friction, effect of speed, keeps speed equal. 
+	rectangle.y_velocity *= 0.9; //friction
+	
+	//if player is falling below the floor line, this will prevent it from doing so. 
+	if (rectangle.y > 180 - 16 - 32){
+		rectangle.jumping = false;//so we can jump again
+		rectangle.y = 180 - 16 - 32;
+		rectangle.y_velocity = 0;
+	}
+	
+	
+
+
     function jump(){
 
     }
@@ -32,36 +82,35 @@ var objImage= null;
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
 	
- window.onload=init;
-	
-	
-	
-/*var player=document.getElementById("knight");
+<script> 
+	var player=document.getElementById("knightplayer");
 var body=document.getElementById("body");
+ 
+knightplayer = {
+	height: 700,
+	jumping: true,
+	width: 400, 
+	x:144, //center of canvas
+	x_velocity: 0, 
+	y:0,
+	y_velocity:0
+};	
 
-var playerleft = 0;
 
-function amnim(e){
-	
-	if(e.keyCode ==39){
-		playerleft +=2;
-		player.style.left = playerleft + 'px';
-		if(playerleft >=600){
-			playerleft -=2;
-	}
-	if(e.keyCode==37){
-		playerleft -=2;
-		player.style.left = playerleft + 'px';
-		if(playerleft <=0){
-			playerleft +=2;
-	}
+
+
+
+
 }
 
 document.onkeydown = anim;
 
     window.onload=init;
-  
-  */  
+window.addEventListener("keydown", controller.keyListener) //execute controller. keylistener function to make controls move. 
+window.addEventListener("keyup", controller.keyListener);
+window.requestAnimationFrame(loop);
+
+
     
     
-    
+
