@@ -7,10 +7,10 @@ var objImage= null;
 		objImage.style.top='0px';
 	}
 
-	var player=document.getElementById("knightplayer");
-	var body=document.getElementById("body");
+	//var player=document.getElementById("knightplayer");
+	//var body=document.getElementById("body");
 	 
-	Knight = {
+	/*Knight = {
 		height: 700,
 		jumping: true,
 		width: 400, 
@@ -18,41 +18,40 @@ var objImage= null;
 		x_velocity: 0, 
 		y:0,
 		y_velocity:0
-	};	
-	
+	};	*/
 
     function getKeyAndMove(e){ 
-controller ={
+/*controller ={
 	left: false, 
 	right:false,
 	up: false,
-	KeyListener: function getKeyAndMove(e){
+	KeyListener: function getKeyAndMove(e){*/
 		
 		var key_code=e.which||e.keyCode;
 		switch(key_code){
-            //case 32: //spacebar
-            //jump();
-            //break;
+            case 32: //spacebar
+            jump();
+            break;
 			case 39: //right arrow key
-				controller.right = key_state;
+				moveRight();
 				break;
 				
-			case 38: //up arrow key
-				controller.up = key_state; //false for key up, true for keydown,
+			//case 38: //up arrow key
+				//controller.up = key_state; false for key up, true for keydown,
 				                      //prevents character from moving when key isnt pressed. 
-				break;
+				//break;
 			
 			case 37: // left arrow key
-				controller.left = key_state;
+				moveLeft();
 				break;
 				
 		
 								
 	}
     }
-};
 
-loop = function(){ //merging controller logic with physics. 
+
+/*loop = function(){ //merging controller logic with physics. 
 	
 	if(controller.up && Knight.jumping == false) //jumping physics
 		//up key presses, rectangle not jumping, want it to jump
@@ -94,6 +93,7 @@ loop = function(){ //merging controller logic with physics.
 //call update when the browser is ready to draw again
 	//window.requestAnimationFrame(loop);
 };
+*/
 	
 	
 	
@@ -123,9 +123,9 @@ loop = function(){ //merging controller logic with physics.
 document.onkeydown = anim;
 
     window.onload=init;
-window.addEventListener("keydown", controller.keyListener) //execute controller. keylistener function to make controls move. 
-window.addEventListener("keyup", controller.keyListener);
-window.requestAnimationFrame(loop);
+//window.addEventListener("keydown", controller.keyListener) //execute controller. keylistener function to make controls move. 
+//window.addEventListener("keyup", controller.keyListener);
+//window.requestAnimationFrame(loop);
 
 
     
