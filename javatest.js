@@ -26,13 +26,13 @@ controller ={
 	left: false, 
 	right:false,
 	up: false,
-	KeyListener: function(event){
+	KeyListener: function getKeyAndMove(e){
 		
 		var key_code=e.which||e.keyCode;
-		switch(event.keyCode){
+		switch(key_code){
             //case 32: //spacebar
             //jump();
-            break;
+            //break;
 			case 39: //right arrow key
 				controller.right = key_state;
 				break;
