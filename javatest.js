@@ -54,7 +54,7 @@ controller ={
 
 loop = function(){ //merging controller logic with physics. 
 	
-	if(controller.up && =Knight.jumping == false){ //jumping physics
+	if(controller.up && Knight.jumping == false) //jumping physics
 		//up key presses, rectangle not jumping, want it to jump
 		Knight.y_velocity -=20;//send rectangle shooting upwards 
 		Knight.jumping = true;
