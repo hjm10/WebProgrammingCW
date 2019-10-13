@@ -7,8 +7,21 @@ var objImage= null;
 		objImage.style.top='0px';
 	}
 
+	var player=document.getElementById("knightplayer");
+	var body=document.getElementById("body");
+	 
+	Knight = {
+		height: 700,
+		jumping: true,
+		width: 400, 
+		x:144, //center of canvas
+		x_velocity: 0, 
+		y:0,
+		y_velocity:0
+	};	
+	
 
-	function getKeyAndMove(e){ 
+    function getKeyAndMove(e){ 
 controller ={
 	left: false, 
 	right:false,
@@ -99,18 +112,6 @@ loop = function(){ //merging controller logic with physics.
 	}
 	
 
-	var player=document.getElementById("knightplayer");
-var body=document.getElementById("body");
- 
-Knight = {
-	height: 700,
-	jumping: true,
-	width: 400, 
-	x:144, //center of canvas
-	x_velocity: 0, 
-	y:0,
-	y_velocity:0
-};	
 
 
 
