@@ -18,7 +18,8 @@ var objImage= null;
 		var key_code=e.which||e.keyCode;
 		switch(key_code){
             case 32: //spacebar
-            break;
+			jump();
+			break;
 			case 39: //right arrow key
 				moveRight();
 				break;
