@@ -4,7 +4,7 @@ var objImage= null;
 		objImage=document.getElementById("Knight");				
 		objImage.style.position='relative';
 		objImage.style.left='0px';
-		objImage.style.top='0px';     
+		objImage.style.top='0px';       
 	}
 
 	//var player=document.getElementById("knightplayer");
