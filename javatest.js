@@ -1,5 +1,5 @@
 /*adding comments next*/
-var objImage= null;
+var objImage= null; 
 	function init(){
 		objImage=document.getElementById("Knight");				
 		objImage.style.position='relative';
