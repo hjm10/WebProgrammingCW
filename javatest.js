@@ -30,6 +30,8 @@ var objImage= null;
 	function moveRight(){
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
+
+	document.onkeydown = anim; 
 	
     window.onload=init;
     
