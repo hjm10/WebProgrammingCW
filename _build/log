@@ -1,0 +1,4 @@
+# dune runtest --profile release
+# OCAMLPARAM: unset
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/0m/3wtb9v2j2d7b_lkwpp4lb8bm0000gn/T/dunee0f7c8.output 2> /dev/null
+$ /Users/jessicablades/.opam/4.08.1/bin/ocamlc.opt -config > /var/folders/0m/3wtb9v2j2d7b_lkwpp4lb8bm0000gn/T/duneed0f11.output

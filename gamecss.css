@@ -1,13 +1,13 @@
 
 
 body{
-  margin: 50;
-  padding: 50;
+  margin: 0;
+  padding: 0;
   position: absolute;
-  background: url(back.jpg);
+  background: url(BG_Decor.png);
   height: 100%;
   width: 100%;
-    background-size: 65%;
+    background-size: 100%;
    background-position: 0 0;
    background-repeat: repeat-x;
 }
@@ -26,15 +26,30 @@ body{
     
 }
 
-#knightplayer{
+#Knight{
   position: absolute;
   top: 10%;
   left: 10%;
   margin-top: 200px;
-  width: 400px;
-  height: 700px;
+ 
+  
   z-index: 50;
-}
+
+
+    width: 218.5px;
+    height: 296px;
+    background-image : url(Knight\ Running.png);
+    animation: moveX 1s steps(10) infinite;
+  }
+  @keyframes moveX{
+    from{background-position-x:0px;}
+    to{background-position-x:220px;}
+  }
+
+
+
+
+
 
  /* #mage{
     position: absolute;
