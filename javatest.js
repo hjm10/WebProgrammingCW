@@ -63,7 +63,7 @@ var objImage= null;
 
 
 
-document.onkeydown = anim;
+//document.onkeydown = anim;
 
     window.onload=init;
 //window.addEventListener("keydown", controller.keyListener) //execute controller. keylistener function to make controls move. 
