@@ -9,16 +9,16 @@ var objImage= null;
 	function getKeyAndMove(e){				
 		var key_code=e.which||e.keyCode;
 		switch(key_code){
-			    case 37: //left arrow key
+			    case 65: //left arrow key
 					   moveLeft();
 					   break;
-				case 38: //up arrow key
+				case 87: //up arrow key
 					   moveUp();
 					   break;
-				case 39: //right arrow key
+				case 68: //right arrow key
 					   moveRight();
 					   break;
-				case 40: //down arrow key
+				case 83: //down arrow key
 					   moveDown();
 					   break;
 								
