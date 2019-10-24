@@ -42,33 +42,17 @@ var objImage= null;
  
 		objImage.style.left=parseInt(objImage.style.left)-100 +'px';
 	}
-	function moveUp(){
-		objImage.style.top=parseInt(objImage.style.top)-100 + 'px';
-	}
+	
 	function moveRight(){
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
-	function moveDown(){
-		objImage.style.top=parseInt(objImage.style.top)+100 +'px';
-	}
+	
 
-	//document.onkeydown = anim; 
 	
 
 
-
-
-
-
-
-
-
-document.onkeydown = anim;
-
     window.onload=init;
-//window.addEventListener("keydown", controller.keyListener) //execute controller. keylistener function to make controls move. 
-//window.addEventListener("keyup", controller.keyListener);
-//window.requestAnimationFrame(loop);
+
 
 
     
