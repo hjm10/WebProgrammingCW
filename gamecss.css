@@ -39,15 +39,16 @@ body{
   z-index: 50;
 
 
-    width: 210px;
-    height: 296px;
+    width: 128px;
+    height: 128px;
     margin:  auto;
-    background-image : url(Knight\ Running.png) ;
+    
+    background-image : url(Mage\ Running.png) ;
     animation: moveX 0.8s steps(8) infinite;
   }
   @keyframes moveX{
     from{background-position-x: 0px;}
-    to{background-position-x: -1748px ;}
+    to{background-position-x: -1024px ;}
   }
 
 
