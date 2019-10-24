@@ -47,7 +47,7 @@ var objImage= null;
 		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
 	}
 	
-
+	objImage=document.getElementById("canvas");
 	
 
 

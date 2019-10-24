@@ -8,7 +8,8 @@ body{
   height: 400px;
   max-width: 100%;
     background-size: cover;
-   background-position: 0 0;
+   background-position: center center;
+   background-attachment: fixed;
    background-repeat: repeat-x;
 }
 
@@ -32,20 +33,21 @@ body{
   position: absolute;
   top: 10%;
   left: 10%;
-  margin-top: 200px;
+  
  
   
   z-index: 50;
 
 
-    width: 218.5px;
+    width: 210px;
     height: 296px;
-    background-image : url(Knight\ Running.png);
-    animation: moveX 1s steps(10) infinite;
+    margin:  auto;
+    background-image : url(Knight\ Running.png) ;
+    animation: moveX 0.8s steps(8) infinite;
   }
   @keyframes moveX{
-    from{background-position-x:0px;}
-    to{background-position-x:220px;}
+    from{background-position-x: 0px;}
+    to{background-position-x: -1748px ;}
   }
 
 
