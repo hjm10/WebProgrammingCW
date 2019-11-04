@@ -29,9 +29,9 @@ body{
     
 }
 
-#Knight{
+#Mage{
   position: absolute;
-  top: 10%;
+  top: 40%;
   left: 10%;
   
  
@@ -39,16 +39,17 @@ body{
   z-index: 50;
 
 
-    width: 128px;
-    height: 128px;
-    margin:  auto;
+    width: 300px;
+    height: 500px;
+   
     
-    background-image : url(Mage\ Running.png) ;
+    background-image : url(1mage.png) ;
+  
     animation: moveX 0.8s steps(8) infinite;
   }
-  @keyframes moveX{
+@keyframes moveX{
     from{background-position-x: 0px;}
-    to{background-position-x: -1024px ;}
+    to{background-position-x: -4000px ;}
   }
 
 

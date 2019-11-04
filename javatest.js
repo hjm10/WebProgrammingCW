@@ -1,10 +1,15 @@
 /*adding comments next*/
 var objImage= null;
+var div = null;
+var jumpSpeed = 1000;
+
+
 	function init(){
-		objImage=document.getElementById("Knight");				
-		objImage.style.position='relative';
-		objImage.style.left='0px';
-		objImage.style.top='0px';       
+		div=document.getElementById("Mage");
+		div.style.position='relative';
+        div.style.left='0px';
+        div.style.top='0px';				
+		
 	}
 
 	//var player=document.getElementById("knightplayer");
@@ -21,15 +26,13 @@ var objImage= null;
 			    case 37: //left arrow key
 					   moveLeft();
 					   break;
-				case 38: //up arrow key
-					   moveUp();
+				case 32: //spacebar
+				
 					   break;
 				case 39: //right arrow key
 					   moveRight();
 					   break;
-				case 40: //down arrow key
-					   moveDown();
-					   break;
+				
 								
 	}
     }
@@ -40,21 +43,32 @@ var objImage= null;
 
 	function moveLeft(){
  
-		objImage.style.left=parseInt(objImage.style.left)-100 +'px';
+		div.style.left=parseInt(div.style.left)-100 +'px';
 	}
 	
 	function moveRight(){
-		objImage.style.left=parseInt(objImage.style.left)+100 +'px';
+		div.style.left=parseInt(div.style.left)+100 +'px';
 	}
+
+	function jump(){
+		div.y -= 25;
+		setTimeout(function () {
+			div.y = characterGround;
+			stage.update();
+		}, jumpSpeed);
+	}
+	window.onload=init;
+   // end if
 	
-	objImage=document.getElementById("canvas");
+  
+	
+
 	
 
 
-    window.onload=init;
 
 
 
-    
+ 
     
 
