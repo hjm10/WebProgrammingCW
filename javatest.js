@@ -1,74 +1,49 @@
-/*adding comments next*/
-var objImage= null;
-var div = null;
-var jumpSpeed = 1000;
+var player = document.getElementById("Mage");
+var left = 0;
+var jump = 0;
 
+function move(e){
+    if(e.keyCode == 32 ){
+	 var x = 0;
 
-	function init(){
-		div=document.getElementById("Mage");
-		div.style.position='relative';
-        div.style.left='0px';
-        div.style.top='0px';				
-		
-	}
-
-	//var player=document.getElementById("knightplayer");
-	//var body=document.getElementById("body");
-	 
+	var interval = setInterval(function() {
+		x++;
+		Mage.style.top = 80 - (-0.2 * x * (x - 80)) + 'px';
 	
+		if(x >= 80) clearInterval(interval);
+	}, 10);
+        
+    }
+    if(e.keyCode == 39){
+        left+= 40;
+        Mage.style.left = (parseInt(left) + left) + "px";
+    }
+    if(e.keyCode == 37 ){
+        left -= 50;
+        Mage.style.left = (parseInt(left) + left) + "px";
+    }
+}
 
-    function getKeyAndMove(e){ 
 
-		
-		var key_code=e.which||e.keyCode;
-		switch(key_code){
 
-			    case 37: //left arrow key
-					   moveLeft();
-					   break;
-				case 32: //spacebar
-				
-					   break;
-				case 39: //right arrow key
-					   moveRight();
-					   break;
-				
-								
+
+function monsterRun(){
+	let start = Date.now(); // remember start time
+	let timer = setInterval(function() {
+	  // how much time passed from the start?
+	  let timePassed = Date.now() - start;
+	  if (timePassed >= 10000) {
+	    clearInterval(timer); // finish the animation after 2 seconds
+	    return;
+	  }
+	  // draw the animation at the moment timePassed
+	  draw(timePassed);
+	}, 20);
 	}
-    }
-
-  
-
-
-
-	function moveLeft(){
- 
-		div.style.left=parseInt(div.style.left)-100 +'px';
+	// as timePassed goes from 0 to 2000
+	// left gets values from 0px to 400px
+	function draw(timePassed) {
+	  monster.style.left = timePassed / 5 + 'px';
 	}
-	
-	function moveRight(){
-		div.style.left=parseInt(div.style.left)+100 +'px';
-	}
-
-	function jump(){
-		div.y -= 25;
-		setTimeout(function () {
-			div.y = characterGround;
-			stage.update();
-		}, jumpSpeed);
-	}
-	window.onload=init;
-   // end if
-	
-  
-	
-
-	
-
-
-
-
-
- 
-    
-
+setTimeout(monsterRun,10000);
+	document.onkeydown = move;
