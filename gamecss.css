@@ -1,63 +1,61 @@
-
-
-body{
+body {
   margin: 0;
   padding: 0;
   position: absolute;
   background: url(BG_Decor.png);
   height: 400px;
   max-width: 100%;
-    background-size: cover;
-   background-position: center center;
-   background-attachment: fixed;
-   background-repeat: repeat-x;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
 }
 
-
-
-
-
-
-#monster{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    margin-top: 200px;
-    width: 600px;
-    height: 600px;
-    z-index:  100; ;
-    
+#monster {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-top: 200px;
+  width: 600px;
+  height: 600px;
+  z-index: 100;
 }
 
-#Mage{
+#Mage {
   position: absolute;
   top: 40%;
   left: 10%;
-  
- 
-  
   z-index: 50;
+  width: 300px;
+  height: 500px;
 
+  background-image: url(1mage.png);
+  animation: moveX 0.8s steps(8) infinite;
+}
 
-    width: 300px;
-    height: 500px;
-   
-    
-    background-image : url(1mage.png) ;
-  
-    animation: moveX 0.8s steps(8) infinite;
-  }
-@keyframes moveX{
-    from{background-position-x: 0px;}
-    to{background-position-x: -4000px ;}
+@keyframes moveX {
+  from {
+    background-position-x: 0px;
   }
 
+  to {
+    background-position-x: -4000px;
+  }
+}
+
+#ground {
+  width: 10000px;
+  height: 90px;
+  background-color: rgba(73, 16, 16, 0.979);
+  margin-top: 100%;;
+  float: left;
+  position: relative;
+}
 
 
 
 
-
- /* #knight{
+/* #knight{
     position: absolute;
     top: 20%;
     left: 20%;
