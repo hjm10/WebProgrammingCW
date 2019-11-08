@@ -4,11 +4,20 @@ var objImage= null;
 		objImage=document.getElementById("Knight");				
 		objImage.style.position='relative';
 		objImage.style.left='0px';
-		objImage.style.top='0px';
+		objImage.style.top='0px';       
 	}
-	function getKeyAndMove(e){				
+
+	//var player=document.getElementById("knightplayer");
+	//var body=document.getElementById("body");
+	 
+	
+
+    function getKeyAndMove(e){ 
+
+		
 		var key_code=e.which||e.keyCode;
 		switch(key_code){
+
 			    case 37: //left arrow key
 					   moveLeft();
 					   break;
@@ -22,9 +31,15 @@ var objImage= null;
 					   moveDown();
 					   break;
 								
-		}
+	}
     }
-    function moveLeft(){
+
+  
+
+
+
+	function moveLeft(){
+ 
 		objImage.style.left=parseInt(objImage.style.left)-100 +'px';
 	}
 	function moveUp(){
@@ -39,7 +54,23 @@ var objImage= null;
 
 	//document.onkeydown = anim; 
 	
+
+
+
+
+
+
+
+
+
+document.onkeydown = anim;
+
     window.onload=init;
+//window.addEventListener("keydown", controller.keyListener) //execute controller. keylistener function to make controls move. 
+//window.addEventListener("keyup", controller.keyListener);
+//window.requestAnimationFrame(loop);
+
+
     
     
 
