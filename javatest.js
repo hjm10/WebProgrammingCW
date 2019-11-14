@@ -45,5 +45,8 @@ function monsterRun(){
 	function draw(timePassed) {
 	  monster.style.left = timePassed / 5 + 'px';
 	}
+
+
+	
 setTimeout(monsterRun,10000);
 	document.onkeydown = move;
