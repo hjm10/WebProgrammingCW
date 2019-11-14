@@ -6,6 +6,60 @@ body {
 .preload{
     height: 100%;
     width: 100%; 
-    background: 
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.logn {
+    width: 400px;
+    height: 80px;
+    margin: 150px auto 50px auto;
+    font-size: 70px;
+    text-shadow: -1px 2px 2px #000;
+    text-align: center;
+    color: blue;
 
+}
+loader.frame {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    position: relative;
+
+
+}
+.loader1, .loader{
+    position: absolute;
+    border: 5px solid transparent;
+    border-radius: 50px;
+
+}
+.loader1 {
+    width: 70px;
+    height: 70px;
+    border-top: 5px solid blue;
+    border-bottom: 5 px solid blue;
+    animation: clockwisespin 2s linear 3;
+}
+.loader2 {
+    width: 70px;
+    height: 70px;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    top: 5px; left: 5px;
+    animation: anticlockwisespin 2s linear 3;
+}
+@keyframes clockwisespin{
+    from  {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes anticlockwisespin{
+    from  {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}
+@keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
