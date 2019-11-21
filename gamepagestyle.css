@@ -1,13 +1,12 @@
-#overlay{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    color: green;
 
-    justify-content: conter;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 5px;
-}
+
+.button1{
+    background-color: #4caf50; /*green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+ }
