@@ -1,3 +1,17 @@
+const overlay = document.getElementById('overlay');
+const startbutton = document.querySelector('.start-button');
+
+startbutton.addEventListener('click', () => {
+	overlay.style.display = "none";
+	if (reset === true && missed === die) {
+		resetGame();
+	} else if (reset === true && missed != die){
+		resetGame();
+	}
+});
+
+
+
 var player = document.getElementById("Mage");
 var left = 0;
 var jump = 0;
