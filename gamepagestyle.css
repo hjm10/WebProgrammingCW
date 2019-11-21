@@ -1,12 +1,44 @@
 
+body {
+    background-image: url('BG_Decor.png');
+}
+
+
+body {margin: 0; padding: 0;}
+.welcome { 
+    font-size: 100px;
+    color: red;
+    text-shadow: -5px 10px 10px #444;
+    text-align: center;
+    margin: 200px auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
 
 .button1{
+    position: absolute;
+    left: 40%;
+    top: 40%;
     background-color: #4caf50; /*green */
     border: none;
-    color: white;
-    padding: 15px 32px;
+    color: black;
+    padding: 15px 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
  }
+
+.button2 {
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    background-color: #4caf50; /*green */
+    border: none;
+    color: black;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    }
