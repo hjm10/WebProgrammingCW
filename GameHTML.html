@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
-  <head>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8">
     <meta name="description" content="HTML5, CSS3">
     <link rel="stylesheet" type="text/css" href="gamecss.css" />
     <script type="text/javascript" src="javatest.js"></script>
-    <title>Testing for Game Controls etc</title>
-
-
-  <body onkeydown='getKeyAndMove(event)'>
-    <header>
-      <div id="monster"  /></div>
-
-      <div id="Mage"> </div>
-      <div id="Rouge"></div>
-      <div id="ground"> </div>
-      <div id="obstacle"></div>
-      
-    </header>
-  </body>
-  </head>
-
+    <title>Test Canvas</title>
+</head>
+<body onload="startGame()">
+    <h1 id="message">MONSTER RUNNER</h1>
+    <div class="timer"><label id="minutes">00</label>:<label id="seconds">00</label></div>
+</body>
 </html>
