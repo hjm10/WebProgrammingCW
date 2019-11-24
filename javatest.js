@@ -1,9 +1,11 @@
 var player1;
+var player2;
 var myObstacles = [];
 
 
 function startGame() {
-    player1 = new component(30,30, "red", 10, 120);
+    player1 = new component(30,30, "red", 10, 130);
+    player2 = new component(30,30, "blue", 10, 290);
     myGameArea.start();
 }
 
@@ -91,7 +93,7 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
-        if (player1.crashWith(myObstacles[i])) {
+        if (player1.crashWith(myObstacles[i]) || player2.crashWith(myObstacles[i])) {
             myGameArea.stop();
             return;
         } 
@@ -117,6 +119,9 @@ function updateGameArea() {
 
     player1.newPos();    
     player1.update();
+
+    player2.newPos();
+    player2.update();
 }
 
 function everyinterval(n) {
@@ -124,21 +129,37 @@ function everyinterval(n) {
     return false;
 }
 
-function move(e) {
-	if (e.keyCode == 39) { // RIGHT ARROW
+function movePlayer1(e1) {
+	if (e1.keyCode == 39) { // RIGHT ARROW
         player1.speedX = 1; 
 	}
-	if (e.keyCode == 37) { // LEFT ARROW
+	if (e1.keyCode == 37) { // LEFT ARROW
 		player1.speedX = -1; 
     }
-    if(e.keyCode == 38) { // UP ARROW
+    if(e1.keyCode == 38) { // UP ARROW
         player1.speedY = -1;
     }
-    if(e.keyCode == 40) { // DOWN ARROW
+    if(e1.keyCode == 40) { // DOWN ARROW
         player1.speedY = 1; 
     }
 	
 }
-			
-document.onkeydown = move;
 
+function movePlayer2(e2) {
+	if (e2.keyCode == 68) { // 'D'
+        player2.speedX = 1; 
+	}
+	if (e2.keyCode == 65) { // 'A'
+		player2.speedX = -1; 
+    }
+    if(e2.keyCode == 87) { // 'W'
+        player2.speedY = -1;
+    }
+    if(e2.keyCode == 83) { // 'S'
+        player2.speedY = 1; 
+    }
+	
+}
+
+document.addEventListener('keydown', movePlayer1, false);
+document.addEventListener('keydown', movePlayer2, false);
