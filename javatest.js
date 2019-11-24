@@ -35,6 +35,48 @@ function move(e) {
 document.onkeydown = move;
 
 
+
+function monsterRun(){
+	let start = Date.now(); // remember start time
+	let timer = setInterval(function() {
+	  // how much time passed from the start?
+	  let timePassed = Date.now() - start;
+	  if (timePassed >= 10000) {
+	    clearInterval(timer); // finish the animation after 2 seconds
+	    return;
+	  }
+	  // draw the animation at the moment timePassed
+	  draw(timePassed);
+	}, 20);
+	}
+	// as timePassed goes from 0 to 2000
+	// left gets values from 0px to 400px
+	function draw(timePassed) {
+	  monster.style.left = timePassed / 5 + 'px';
+	}
+setTimeout(monsterRun,10000);
+	document.onkeydown = move;
+
+	(function() {
+
+		var preload = document.getElementById("preload");
+		var loading = 0;
+		var id = setInterval(frame, 64);
+
+		function frame() {
+			if(loading == 100){
+				clearInterval(id);
+				window.open("welcome.html", "_self");
+			} else {
+				loading = loading + 1;
+				if(loading == 90){
+					preload.style.animation = "fadeout 1s ease";
+				}
+			}
+		}
+
+	})();
+
 function monsterRun() {
 	        let start = Date.now(); // remember start time
 	        let timer = setInterval(function () {
@@ -80,3 +122,4 @@ function monsterRun() {
 		}
 	  }
 	
+
