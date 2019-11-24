@@ -1,125 +1,170 @@
-var player = document.getElementById("Mage");
-var player2 = document.getElementById("Rouge");
+var player1;
+var player2;
+var myObstacles = [];
 
-var left = 0;
-var jump = 0;
+function startGame() {
+    player1 = new component(30,30, "red", 10, 130);
+    player2 = new component(30,30, "blue", 10, 290);
+    myGameArea.start();
+}
 
-function move(e) {
-	if (e.keyCode == 32) {
-		var x = 0;
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 1100;
+        this.canvas.height = 450;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
 
-		var interval = setInterval(function () {
-			x++;
-			Mage.style.top = 90 - (-0.2 * x * (x - 82)) + 'px';
-			Rouge.style.top = 90 - (-0.2 * x * (x - 82)) + 'px';
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
 
-			if (x >= 90) clearInterval(interval);
-		}, 20);
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var totalSeconds = 0;
+        setInterval(setTime, 1000);
 
+        function setTime() {
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        }
+
+        function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+}
+
+    },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    stop : function() {
+        clearInterval(this.interval);
+    }
+
+}
+
+function component(width, height, color, x, y, type) {
+    this.type = type;
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        if (this.type == "text") {
+            ctx.font = this.width + " " + this.height;
+            ctx.fillStyle = color;
+            ctx.fillText(this.text, this.x, this.y);
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;        
+    }
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+            crash = false;
+        }
+        return crash;
+    }
+}
+
+function updateGameArea() {
+    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (player1.crashWith(myObstacles[i])) {
+            myGameArea.stop();
+            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 2 (BLUE) WINS!";
+            return;
+        } 
+        if (player2.crashWith(myObstacles[i])) {
+            myGameArea.stop();
+            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 1 (RED) WINS!";
+            return;
+        } 
+    }
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
+    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        x = myGameArea.canvas.width;
+        minHeight = 20;
+        maxHeight = 200;
+        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+        minGap = 50;
+        maxGap = 200;
+        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+        myObstacles.push(new component(10, height, "green", x, 0));
+        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+    }
+    for (i = 0; i < myObstacles.length; i += 1) {
+        myObstacles[i].speedX = -1;
+        myObstacles[i].newPos();
+        myObstacles[i].update();
+    }
+
+    player1.newPos();    
+    player1.update();
+
+    player2.newPos();
+    player2.update();
+}
+
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+
+function movePlayer1(e1) {
+	if (e1.keyCode == 39) { // RIGHT ARROW
+        player1.speedX = 1; 
 	}
-	if (e.keyCode == 39) {
-		left += 25;
-		Mage.style.left = (parseInt(left) + left) + "px";
-		Rouge.style.left = (parseInt(left) + left) + "px";
-	}
-	if (e.keyCode == 37) {
-		left -= 25;
-		Mage.style.left = (parseInt(left) + left) + "px";
-		Rouge.style.left = (parseInt(left) + left) + "px";
-	}
+	if (e1.keyCode == 37) { // LEFT ARROW
+		player1.speedX = -1; 
+    }
+    if(e1.keyCode == 38) { // UP ARROW
+        player1.speedY = -1;
+    }
+    if(e1.keyCode == 40) { // DOWN ARROW
+        player1.speedY = 1; 
+    }
 	
 }
-			
 
-
-document.onkeydown = move;
-
-
-
-function monsterRun(){
-	let start = Date.now(); // remember start time
-	let timer = setInterval(function() {
-	  // how much time passed from the start?
-	  let timePassed = Date.now() - start;
-	  if (timePassed >= 10000) {
-	    clearInterval(timer); // finish the animation after 2 seconds
-	    return;
-	  }
-	  // draw the animation at the moment timePassed
-	  draw(timePassed);
-	}, 20);
+function movePlayer2(e2) {
+	if (e2.keyCode == 68) { // 'D'
+        player2.speedX = 1; 
 	}
-	// as timePassed goes from 0 to 2000
-	// left gets values from 0px to 400px
-	function draw(timePassed) {
-	  monster.style.left = timePassed / 5 + 'px';
-	}
-setTimeout(monsterRun,10000);
-	document.onkeydown = move;
-
-	(function() {
-
-		var preload = document.getElementById("preload");
-		var loading = 0;
-		var id = setInterval(frame, 64);
-
-		function frame() {
-			if(loading == 100){
-				clearInterval(id);
-				window.open("welcome.html", "_self");
-			} else {
-				loading = loading + 1;
-				if(loading == 90){
-					preload.style.animation = "fadeout 1s ease";
-				}
-			}
-		}
-
-	})();
-
-function monsterRun() {
-	        let start = Date.now(); // remember start time
-	        let timer = setInterval(function () {
-	            // how much time passed from the start?
-	            let timePassed = Date.now() - start;
-	            if (timePassed >= 6000) {
-	                clearInterval(timer); // finish the animation after 2 seconds
-	                return;
-	            }
-	            // draw the animation at the moment timePassed
-	            draw(timePassed);
-	        }, 20);
-	    }
-	    // as timePassed goes from 0 to 2000
-	    // left gets values from 0px to 400px
-	    function draw(timePassed) {
-	        window.innerWidth = 500;
-	        if(innerWidth >= 0){
-	        monster.style.left = timePassed / 5 + 'px';
-	        }
-	        else{
-	        monster.style.left = timePassed / 5 - 'px';
-	        }
-	    }
-	    setInterval(monsterRun, 5100);
-
-	function checkCollision(elm1,elm2) {
-		var elm1Rect = elm1.getBoundingClientRect();
-		var elm2Rect = elm2.getBoundingClientRect();
-	  
-		 return(elm1Rect.right >= elm2Rect.left &&
-			elm1Rect.left <= elm2Rect.right) &&
-		  (elm1Rect.bottom >= elm2Rect.top &&
-			elm1Rect.top <= elm2Rect.bottom)
-			
-			
-	  }
+	if (e2.keyCode == 65) { // 'A'
+		player2.speedX = -1; 
+    }
+    if(e2.keyCode == 87) { // 'W'
+        player2.speedY = -1;
+    }
+    if(e2.keyCode == 83) { // 'S'
+        player2.speedY = 1; 
+    }
 	
-	  function alert() {
+}
 
-		if (checkCollision(player, monster)) {
-		 alert("You have died");
-		}
-	  }
-	
-
+document.addEventListener('keydown', movePlayer1, false);
+document.addEventListener('keydown', movePlayer2, false);
