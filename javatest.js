@@ -166,5 +166,7 @@ function movePlayer2(e2) {
 	
 }
 
+<button type="button1"onclick="window.location.href = 'GameHTML.html';">Restart Game</button>
+
 document.addEventListener('keydown', movePlayer1, false);
 document.addEventListener('keydown', movePlayer2, false);
