@@ -2,7 +2,6 @@ var player1;
 var player2;
 var myObstacles = [];
 
-
 function startGame() {
     player1 = new component(30,30, "red", 10, 130);
     player2 = new component(30,30, "blue", 10, 290);
@@ -93,8 +92,14 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
-        if (player1.crashWith(myObstacles[i]) || player2.crashWith(myObstacles[i])) {
+        if (player1.crashWith(myObstacles[i])) {
             myGameArea.stop();
+            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 2 WINS!";
+            return;
+        } 
+        if (player2.crashWith(myObstacles[i])) {
+            myGameArea.stop();
+            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 1 WINS!";
             return;
         } 
     }
