@@ -2,12 +2,13 @@
 *2D Multiplayer Game (monster game)*
 
 **Game Idea/Rules:**
-- There are 5 players that start running at the beginning of the game  (horizontally across the screen)
+- A player starts running at the beginning of the game, they have ton not crash into the pillars in front of them that are coming up on the screen. 
+- they are being chased by a monster as they navigate through the game. 
 - After 10(?) seconds of running, the monster is released and starts chasing the players across the screen
-- The players must navigate randomly generated obstacles that change each time
-- To win the game, the players must reach the end of the map
+- The players must navigate through the gaps in the pillars that change position on the screen throughout the game.
+- To win the game, the players must reach the end of the course. 
 - Have the option of difficulty: Easy, Medium and Hard 
-- The harder the difficulty, the faster the monster and the more obstacles there are
+- 
 	
 **Graphics Needed:**
 - [Players](https://craftpix.net/freebies/assassin-mage-viking-free-pixel-art-game-heroes/)
@@ -17,17 +18,6 @@
 	
     
 **Obstacles:**
-- Crumbling blocks that give way to obstacle like spikes or fire
-- Spikes on track 
-- Pieces of track that rise up so have to jump over them or wall that forces you to go another way
-- Rolling logs
+-  pillars that the player has to naviagte through the gaps in between them. 
 
-**Rewards:**
-- Tether that allows you to pull the player ahead of you behind you
-- Perks - life, speed, shield
-- Smoke bomb to put behind you and damage players’ progress / bomb that can kill a certain number of players behind you to put you more in the lead in the game.
 
-**Slow Down:**
-- Mud (run through to make you slower) 
-- Water (makes you slip)
-- Rake in face (makes you dizzy for a few seconds, like in Tom and Jerry episodes)
