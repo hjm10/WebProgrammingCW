@@ -1,54 +1,106 @@
+body {
+  background-image: url('BG_Decor.png');
+background-repeat: repeat-x;
+background-position:center 0, center 56px,center 112px, center 168px, center 224px;
+overflow: hidden;
+max-width: 100%;
 
 
-body{
-  margin: 0;
+
+
+  /*margin: 0;
   padding: 0;
   position: absolute;
   background: url(BG_Decor.png);
   height: 400px;
   max-width: 100%;
-    background-size: cover;
-   background-position: center center;
-   background-attachment: fixed;
-   background-repeat: repeat-x;
-   
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: repeat-x,;*/
 }
 
-
-
-
-
-#monster{
-    position: relative;
-    width: 800px;
-    height: 800px;
-    z-index:  50; 
-    
-  
-    
-}
-
-#Mage{
+#monster {
   position: absolute;
-  top: 40%;
+  top: 0%;
+  left: -5%;
+  margin-top: 380px;
+  width: 400px;
+  height: 400px;
+  z-index: 50;
+  background-image: url(monster.png);
+  border:1px solid black;
+}
+
+#Mage {
+  position: absolute;
+  top: 28%;
   left: 10%;
-  z-index: 100;
+  z-index: 50;
+  width: 300px;
+  height: 450px;
+  margin-top: 45px;
+  border:1px solid black;
+  line-height: 3px;
+
+  background-image: url(1mage.png);
+  animation: moveX 0.8s steps(8) infinite;
+}
+
+@keyframes moveX {
+  from {
+    background-position-x: 0px;
+  }
+
+  to {
+    background-position-x: -4000px;
+  }
+}
+
+#ground {
+  width: 590%;
+  height: 10%;
+  background-color: rgba(73, 16, 16, 0.979);
+  margin-top: 40%;
+  float: left;
+  position: absolute;
+}
+
+#Obstacle{
+  background-image: url(flag.JPG);
+}
+ 
+ 
+
+
+
+
+#Rouge{
+  position: absolute;
+  top: 28%;
+  left: 10%;
+  z-index: 80;
   width: 300px;
   height: 500px;
-  background-image : url(1mage.png) ;
+  margin-top: 45px;
+
+  background-image: url(Rogue\ Running.png);
   animation: moveX 0.8s steps(8) infinite;
+}
+
+@keyframes moveX {
+  from {
+    background-position-x: 0px;
   }
-@keyframes moveX{
-    from{background-position-x: 0px;}
-    to{background-position-x: -4000px ;}
+
+  to {
+    background-position-x: -4000px;
   }
+}
 
 
 
-
-
-
- /* #knight{
+/* #knight{
     position: absolute;
     top: 20%;
     left: 20%;
