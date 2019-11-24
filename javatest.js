@@ -94,12 +94,12 @@ function updateGameArea() {
     for (i = 0; i < myObstacles.length; i += 1) {
         if (player1.crashWith(myObstacles[i])) {
             myGameArea.stop();
-            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 2 WINS!";
+            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 2 (BLUE) WINS!";
             return;
         } 
         if (player2.crashWith(myObstacles[i])) {
             myGameArea.stop();
-            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 1 WINS!";
+            document.getElementById("message").innerHTML = "GAME OVER - PLAYER 1 (RED) WINS!";
             return;
         } 
     }
