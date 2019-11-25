@@ -1,5 +1,22 @@
 # WebProgrammingCW
-*2D Multiplayer Game (monster game)*
+*2D Multiplayer Game (Pillar Plaza game)*
+
+Cinematic Trailer for Pillar Plaza!
+ - (https://www.youtube.com/watch?v=pAHoyaWIdpQ)
+
+
+**How to run Game**
+- HAVE NODE INSTALLED
+- Download our fabulous zip file from Github (https://github.com/hjm10/WebProgrammingCW)
+- Extract the files from the zip
+- Open the server.js file in Visual Studio Code
+- Type cd /pathname/ to take you to the folder
+- Install express by typing 'npm install express'
+- Next type 'node server.js'
+- Open your web browser and type in the address bar 'localhost:8000'
+- Enjoy the game with a friend
+- Please read game instructions first
+
 
 **Game Idea/Rules:**
 
