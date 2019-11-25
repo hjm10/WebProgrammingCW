@@ -2,6 +2,7 @@ var player1;
 var player2;
 var myObstacles = []; // Array to store all randomly-generated obstacles
 
+
 /** Creates 2 players (Player 1: red square, Player 2: blue square) and initialises gameplay area */
 function startGame() {
     player1 = new component(30, 30, "red", 10, 130);
@@ -153,9 +154,11 @@ function updateGameArea() {
     }
 
     /** Updates players' positions in the game area */
+    
     player1.newPos();
     player1.update();
 
+    
     player2.newPos();
     player2.update();
 }

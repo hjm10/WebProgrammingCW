@@ -3,11 +3,11 @@
 
 **Game Idea/Rules:**
 
-- The player starts running at the beginning of the game.
+- The player starts moving at the beginning of the game.
 - The player has to avoid the pillars by passing through the gaps in between them.
-- After 10 seconds of running, the monster is released and starts chasing the player across the screen.
-- The player must navigate throught the pillars whilst being chased by the monster, if they are hit by the pillar the monster will start to catch up to them.
-- To win the game, the players must reach the end of the course and not get killed by the monster.
+- The player must navigate throught the pillars, if they hit one the game will stop.
+- To win the game, do not hit the pillars. 
+- The player who does not hit the pilar will win the game.
 - Enjoy the game 
 
 	
@@ -18,6 +18,6 @@
 - [Background](https://craftpix.net/freebies/free-cartoon-forest-game-backgrounds/)
 
 **Slow Down**
-- The player will slow down if they hit a pillar as they will have to move around it and this will give the monster time to catch up with the player
+- The player will cause the game to end if they hit one of the pillar 
 	
  

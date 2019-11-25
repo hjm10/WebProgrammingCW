@@ -7,6 +7,7 @@
      border-image: url('1mage.png');
      margin: 0;
      padding: 0;
+     border-image: url('1mage.png');
  }
 
  /** Displays the name of our game */
@@ -59,4 +60,20 @@
      top: 50%;
      padding: 15px 35px;
      text-align: center;
+ }
+
+ /** mage aniamtion */
+ #Mage {
+     position: absolute;
+     top: 40%;
+     left: 70%;
+     z-index: 100;
+     width: 300px;
+     height: 500px;
+     background-image: url('1mage.png');
+     animation: moveX 0.8s steps(8) infinite;
+ }
+ @keyframes moveX{
+     from{background-position-x: 0px;}
+     to{background-position-x: -4000px;}
  }
