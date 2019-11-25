@@ -1,51 +1,62 @@
+ /** Sets up background image */
+
  body {
-    background-image: url('TestBackground.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-image: url('1mage.png');
-    margin: 0; 
-    padding: 0;
-}
-
-.welcome { 
-    font-size: 100px;
-    color:black;
-    text-shadow: -5px 10px 10px #444;
-    text-align: center;
-    margin: 100px auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
-.buttons {
-    position: relative;
-    left: 40%;
-    background-color: #4caf50; /*green */
-    border: none;
-    color: black;
-    margin: 30px;
-    padding: 15px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+     background-image: url('TestBackground.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     border-image: url('1mage.png');
+     margin: 0;
+     padding: 0;
  }
 
-h1 {
-    font-size: 100px;
-    color: red;
-    text-shadow: -5px 10px 10px #444;
-    text-align: center;
-    margin: 200px auto;
-    font-family: 'Times New Roman', Times, serif;
-}
+ /** Displays the name of our game */
 
-p { 
-    font-size: 20px;
-    color: red;
-    text-shadow: -5px 10px 10px #444;
-    left: 40%;
-    top: 50%;
-    padding: 15px 35px;
-    text-align: center;
+ .gameTitle {
+     font-size: 100px;
+     color: black;
+     text-shadow: -5px 10px 10px #444;
+     text-align: center;
+     margin: 100px auto;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+ }
+
+ /** Styling for the buttons on the welcome page */
+
+ .buttons {
+     position: relative;
+     left: 40%;
+     background-color: #4caf50;
+     /*green */
+     border: none;
+     color: black;
+     margin: 30px;
+     padding: 15px 35px;
+     text-align: center;
+     text-decoration: none;
+     display: block;
+     font-size: 20px;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+ }
+
+ /** Styling for the game name on the welcome page */
+
+ h1 {
+     font-size: 100px;
+     color: red;
+     text-shadow: -5px 10px 10px #444;
+     text-align: center;
+     margin: 200px auto;
+     font-family: 'Times New Roman', Times, serif;
+ }
+
+ /** Styling for the instructions text on the instructions page */
+
+ p {
+     font-size: 20px;
+     color: red;
+     text-shadow: -5px 10px 10px #444;
+     left: 40%;
+     top: 50%;
+     padding: 15px 35px;
+     text-align: center;
  }
