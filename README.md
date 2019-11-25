@@ -10,6 +10,7 @@ Cinematic Trailer for Pillar Plaza!
 - Download our fabulous zip file from Github (https://github.com/hjm10/WebProgrammingCW)
 - Extract the files from the zip
 - Open the server.js file in Visual Studio Code
+- Open a new terminal
 - Type cd /pathname/ to take you to the folder
 - Install express by typing 'npm install express'
 - Next type 'node server.js'
