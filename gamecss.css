@@ -32,16 +32,3 @@ h1 {
   top: 10%;
 }
 
-.button{
-  position: absolute;
-    left: 40%;
-    top: 80%;
-    background-color: #4caf50; /*green */
-    border: none;
-    color: black;
-    padding: 15px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-}
